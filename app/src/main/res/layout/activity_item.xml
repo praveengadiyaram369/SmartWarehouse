@@ -7,8 +7,8 @@
     tools:showIn="@layout/app_bar_main"
     xmlns:tools="http://schemas.android.com/tools">
 
-
-
     <include
         layout="@layout/content_item"/>
+
+
 </LinearLayout>

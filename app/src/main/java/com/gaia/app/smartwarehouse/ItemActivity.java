@@ -37,7 +37,8 @@ public class ItemActivity extends AppCompatActivity implements NavigationView.On
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        // Adding custom toolbar to the page
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -54,8 +55,9 @@ public class ItemActivity extends AppCompatActivity implements NavigationView.On
         ItemAdapter itemAdapter = new ItemAdapter();
         recyclerView.setAdapter( itemAdapter);
 
-
-
+        //Navigation drawer code
+        //TODO change navigation drawer
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.setDrawerListener(toggle);
