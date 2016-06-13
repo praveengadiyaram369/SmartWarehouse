@@ -13,7 +13,7 @@ import com.gaia.app.smartwarehouse.R;
  * Created by anant on 13/06/16.
  */
 
-class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder>{
+public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder>{
 
 
     @Override
@@ -29,12 +29,12 @@ class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder>{
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        holder.textView.setText("item");
+        holder.textView.setText("Warehouse Item"+position);
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return 10;
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder{

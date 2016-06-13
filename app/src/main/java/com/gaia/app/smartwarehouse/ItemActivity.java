@@ -3,9 +3,10 @@ package com.gaia.app.smartwarehouse;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
-import android.widget.GridView;
+import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.RecyclerView;
+
 import com.gaia.app.smartwarehouse.adapters.ItemAdapter;
-import com.gaia.app.smartwarehouse.classes.Item;
 
 /**
  * Created by anant on 13/06/16.
@@ -19,9 +20,13 @@ public class ItemActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_item);
 
-        GridView gridView = (GridView) findViewById(R.id.itemgrid);
-        ItemAdapter
-        gridView.setAdapter();
+
+        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.itemgrid);
+        recyclerView.setHasFixedSize(true);
+        GridLayoutManager layoutManager = new GridLayoutManager(getApplicationContext(),3);
+        recyclerView.setLayoutManager(layoutManager);
+        ItemAdapter itemAdapter = new ItemAdapter();
+        recyclerView.setAdapter( itemAdapter);
 
     }
 
