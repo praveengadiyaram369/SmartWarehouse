@@ -1,6 +1,7 @@
 package com.gaia.app.smartwarehouse;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.CoordinatorLayout;
@@ -24,7 +25,7 @@ import com.gaia.app.smartwarehouse.adapters.ItemAdapter;
 
 public class ItemActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
-
+    Context context;
     Toolbar toolbar;
     @Override
     public void setSupportActionBar(@Nullable Toolbar toolbar) {
@@ -38,9 +39,11 @@ public class ItemActivity extends AppCompatActivity implements NavigationView.On
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         // Adding custom toolbar to the page
-
+        context =getApplicationContext();
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar.setTitle("Category");
         setSupportActionBar(toolbar);
+
 
 
         CoordinatorLayout coordinatorLayout = (CoordinatorLayout) findViewById(R.id.coordi);
@@ -103,12 +106,17 @@ public class ItemActivity extends AppCompatActivity implements NavigationView.On
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
+
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+
         int id = item.getItemId();
 
         if (id == R.id.nav_camera) {
             // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
-
+        } else if (id == R.id.detail) {
+            Intent i = new Intent(getApplicationContext(), DetailActivity.class);
+            startActivity(i);
+            finish();
         } else if (id == R.id.nav_slideshow) {
 
         } else if (id == R.id.nav_manage) {
@@ -119,8 +127,8 @@ public class ItemActivity extends AppCompatActivity implements NavigationView.On
 
         }
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
+
         return true;
     }
 }
