@@ -119,4 +119,16 @@
     <option name="KEYWORD_SUBSTITUTION_WRAPPERS" value="" />
     <option name="MAKE_NEW_FILES_READ_ONLY" value="false" />
   </component>
+  <component name="SvnApplicationSettings">
+    <option name="myCheckoutURLs">
+      <list>
+        <option value="http://github.com/ankas123/SmartWarehouse" />
+      </list>
+    </option>
+    <option name="myTypedURLs">
+      <list>
+        <option value="http://github.com/ankas123/SmartWarehouse" />
+      </list>
+    </option>
+  </component>
 </application>
